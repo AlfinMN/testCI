@@ -1,0 +1,242 @@
+body,
+html {
+	background-color: #eee;
+	font-family: "Alata", sans-serif;
+	height: 100%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	font-family: "Alata", sans-serif;
+}
+a {
+	font-family: "Alata", sans-serif;
+	color: #333;
+}
+a:hover {
+	color: #5692a3;
+	text-decoration: none !important;
+}
+
+.container {
+	background-image: url(../img/bg.png);
+	height: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: -50px -50;
+}
+.login-content {
+	float: right;
+	flex-direction: column;
+}
+
+.site-navbar {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.site-navbar ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+}
+.site-navbar ul li a {
+	color: #5692a3 !important;
+	padding: 20px;
+	padding-right: 10px;
+	display: block;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin-top: 16px;
+}
+
+.nav-toggler {
+	border: none;
+	padding: 5px;
+	background-color: transparent;
+	cursor: pointer;
+	height: 39px;
+	display: none;
+}
+.nav-toggler:focus {
+	border: none;
+	outline: none;
+}
+
+.nav-toggler span,
+.nav-toggler span:before,
+.nav-toggler span:after {
+	width: 28px;
+	height: 3px;
+	background-color: #5894a3;
+	display: block;
+	transition: 0.3s;
+}
+.nav-toggler span:before {
+	content: "";
+	transform: translateY(-9px);
+}
+.nav-toggler span:after {
+	content: "";
+	transform: translateY(6px);
+}
+.nav-toggler.toggler-open span {
+	background-color: transparent;
+}
+.nav-toggler.toggler-open span:before {
+	transform: translateY(0px) rotate(45deg);
+}
+.nav-toggler.toggler-open span:after {
+	transform: translateY(-3px) rotate(-45deg);
+}
+
+.login-form {
+	margin-top: 120px;
+}
+.login-form h4 {
+	text-align: center;
+	color: #5692a3;
+	font-weight: 600;
+	margin-bottom: 22px;
+}
+.login-form .forgot-password {
+	text-align: center;
+	color: #5692a3 !important;
+}
+.login-form .forgot-password a {
+	color: #5692a3 !important;
+}
+.login-form .create-account {
+	text-align: center;
+	color: #5692a3 !important;
+}
+.login-form .create-account a {
+	color: #5692a3 !important;
+}
+.login-form input {
+	border-radius: 20px !important;
+	text-align: center;
+	border: none !important;
+	background-image: linear-gradient(-90deg, #a0d6ad, #5692a3);
+
+	font-weight: bold;
+}
+
+.login-form input:focus {
+	outline: none !important;
+	box-shadow: none !important;
+	border: none !important;
+}
+
+.login-form .login-btn {
+	margin-top: 1rem;
+}
+.login-form .login-btn .btn {
+	border-color: #a0d6ad !important;
+	background-color: #a0d6ad !important;
+	font-weight: 600;
+}
+
+/***************************** media query 1366px **********/
+@media only screen and (max-width: 1366px) {
+	.container {
+		background-position: -155px -155px;
+
+		margin-left: 0px !important;
+	}
+}
+/***************************** media query 1294px **********/
+@media only screen and (max-width: 1294px) {
+	.container {
+		background-position: -115px -115px;
+
+		margin-left: 0px !important;
+	}
+}
+/***************************** media query 1024px **********/
+@media only screen and (max-width: 1024px) {
+	.container {
+		background-position: -97px -97px;
+		background-size: unset;
+		margin-left: 0px !important;
+	}
+	.login-form {
+		margin-top: 80px;
+	}
+}
+/***************************** media query 815px **********/
+@media only screen and (max-width: 900px) {
+	.container {
+		background-image: none;
+	}
+	.site-navbar {
+		justify-content: center;
+	}
+	.login-content {
+		align-items: center;
+	}
+	.site-navbar ul li a {
+		font-size: 14px;
+		padding: 20px 10px 20px 10px;
+	}
+	.login-form {
+		margin: 20px auto !important;
+	}
+}
+/***************************** media query 414px **********/
+/* mobile breakpoint start */
+@media screen and (max-width: 414px) {
+	/* navbar css for mobile start */
+	.header-area {
+		width: 100%;
+	}
+	.nav-toggler {
+		display: block;
+	}
+	.site-navbar {
+		min-height: 60px;
+		justify-content: flex-end;
+	}
+	.site-navbar ul {
+		position: absolute;
+		width: 100%;
+		height: calc(100vh - 60px);
+		left: -15px;
+		top: 60px;
+		flex-direction: column;
+		align-items: center;
+
+		background-color: rgba(0, 0, 0, 0.75);
+		max-height: 0;
+		overflow: hidden;
+		transition: 0.3s;
+		z-index: 999;
+	}
+	.site-navbar ul li {
+		width: 100%;
+		text-align: center;
+	}
+	.site-navbar ul li a {
+		padding: 25px;
+		color: #fff !important;
+	}
+	.site-navbar ul li a:hover {
+		background-color: rgba(255, 255, 255, 0.1);
+	}
+	.site-navbar ul.open {
+		max-height: 100vh;
+		overflow: visible;
+	}
+
+	/* navbar css for mobile end */
+	.login-form {
+		padding-left: 0 !important;
+	}
+}
